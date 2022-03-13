@@ -24,10 +24,10 @@
 \usetheme{Singapore}
 \usecolortheme{rose}
 
-\title[Beamer Template]{Beamer Template}
+\title[Categorías derivadas y geometría birracional]{Categorías derivadas y \\ geometría birracional}
 \author{Pedro N\'{u}\~{n}ez}
-\institute{Albert-Ludwigs-Universit\"{a}t Freiburg}
-\date{\today}
+\institute{Red de Doctorandos en Matemáticas UCM}
+\date{22 de Marzo de 2022}
 
 \makeatletter
 \hypersetup{
@@ -43,8 +43,145 @@
 \frame{\titlepage}
 
 \begin{frame}
-  \frametitle{Thanks for your attention!}
-  \printbibliography
+  \frametitle{Plan de la charla}
+  \tableofcontents
+\end{frame}
+
+\section{Categorías derivadas}
+
+\begin{frame}
+  \frametitle{Homología relativa a un subespacio}
+  Sequencia exacta de complejos produce sequencia exacta larga de homologías.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Categorías abelianas}
+  Es una propiedad, no una estructura (importante por el contraste con las trianguladas).
+  Definición.
+  Ejemplo:~grupos abelianos.
+  Contraejemplo:~conjuntos.
+  Complejos y sequencias exactas.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Objetivo}
+  Partiendo de una categoría abeliana (la de grupos abelianos, por tener un ejemplo concreto en mente), construir una categoría cuyos objetos sean complejos de cadenas y cuyos morfismos nos permitan identificar complejos con la misma homología.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Definición de la categoría derivada}
+  Mediante propiedad universal.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Construcción:~primer paso}
+  Identificar morfismos homotópicos.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ejemplo:~primer paso no basta}
+  \[ 0 \to \mathbb{Z} \to \mathbb{Z} \to \mathbb{Z}/2\mathbb{Z} \to 0 \]
+\end{frame}
+
+\begin{frame}
+  \frametitle{Observación:~podemos detectar equivalencias débiles con conos}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Observación:~estructura triangulada}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Construcción:~segundo paso}
+  Cociente de Verdier (localización con cálculo de fracciones).
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ejemplo:~functores derivados}
+  Por qué hace falta derivarlos, compatibilidad con la estructura triangulada.
+\end{frame}
+
+\section{El Programa del Modelo Minimal}
+
+\begin{frame}
+  \frametitle{Objetivo:~clasificar variedades algebraicas}
+  Clasificar módulo isomorfismo es difícil.
+  En vez de ello, intentamos clasificar módulo equivalencia birracional (módulo tener abiertos de Zariski densos isomorfos).
+\end{frame}
+
+\begin{frame}
+  \frametitle{Curvas:~único representante proyectivo y liso}
+  Clasificación según el género, es decir, según el grado del divisor canónico.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Superficies:~demasiados posibles representantes proyectivos y lisos}
+  Problema:~blow-up produce nuevo representante distinto pero también proyectivo y liso.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Superficies:~criterio de Castelnuovo}
+  Las curvas contractibles se manifiestan como curvas con intersección negativa con el divisor canónico.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Superficies:~algoritmo del MMP}
+  Contraer curvas negativas.
+  Posibles resultados:
+  \begin{enumerate}
+    \item Contracción divisorial.
+    \item Fibración de Mori.
+  \end{enumerate}
+\end{frame}
+
+\section{Categorías derivadas de variedades}
+
+\begin{frame}
+  \frametitle{La categoría derivada de una variedad}
+  Fibrados vectoriales no bastan, por eso consideramos haces coherentes.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Propiedades reflejadas en la categoría derivada}
+  \begin{enumerate}
+    \item Conexitud (en concreto, irreducibilidad).
+    \item Dimensión.
+    \item Anillo canónico.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Descomposiciones semiortogonales}
+  Las ortogonales no son posibles.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Descomposición del espacio proyectivo}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Descomposición inducida por un blow-up}
+\end{frame}
+
+\section{Problemas abiertos}
+
+\begin{frame}
+  \frametitle{Hipótesis DK}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Descomposiciones en superficies}
+\end{frame}
+
+\section{Referencias}
+
+\begin{frame}
+  \frametitle{Gracias por vuestra atención!}
+  \nocite{gm03}
+  \nocite{huy06}
+  \nocite{kaw17}
+  \nocite{mat02}
+  \printbibliography[heading=none]
 \end{frame}
 
 \end{document}
