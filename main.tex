@@ -42,63 +42,138 @@
 
 \frame{\titlepage}
 
-\begin{frame}
-  \frametitle{Plan de la charla}
-  \tableofcontents
-\end{frame}
-
 \section{Categorías derivadas}
 
 \begin{frame}
-  \frametitle{Homología relativa a un subespacio}
-  Sequencia exacta de complejos produce sequencia exacta larga de homologías.
+  \frametitle{Motivación histórica (demasiado simplificada)}
+  \begin{enumerate}
+    \item Topología algebraica:~asociar invariantes algebraicos a espacios topológicos, por ejemplo la homología.
+      \pause
+    \item Álgebra homológica:~sistematizar y generalizar métodos y herramientas disponibles en la categoría de grupos abelianos, permitiéndonos definir invariantes con valores en otras categorías (en categorías abelianas).
+      \pause
+    \item Las categorías derivadas surgen como herramienta técnica necesaria para generalizar la dualidad de Poincaré al contexto relativo (dualidad de Verdier).
+      \pause
+    \item Con el tiempo las categorías derivadas adquieren interés propio, gracias por ejemplo a la simetría especular homológica o a conexiones con la geometría birracional.
+  \end{enumerate}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Categorías abelianas}
-  Es una propiedad, no una estructura (importante por el contraste con las trianguladas).
-  Definición.
-  Ejemplo:~grupos abelianos.
-  Contraejemplo:~conjuntos.
-  Complejos y sequencias exactas.
+  \frametitle{Motivación más concreta:~objetos}
+  \begin{center}
+    ``Complejos de cadenas bien, grupos de homología mal.'' \\
+    \hfill ---Richard Thomas.
+  \end{center}
+  \pause
+  \begin{itemize}
+    \item Motivación conceptual (teorema de Whitehead):~los grupos de homología no determinan el tipo de homotopía de un buen\footnote{CW-complejo simplemente conexo.} espacio topológico, pero los complejos de cadenas sí.
+      \pause
+    \item Motivación práctica:~los grupos de cohomología no son el dual de los grupos de homología, pero el complejo de cocadenas sí que es el dual del complejo de cadenas.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Objetivo}
-  Partiendo de una categoría abeliana (la de grupos abelianos, por tener un ejemplo concreto en mente), construir una categoría cuyos objetos sean complejos de cadenas y cuyos morfismos nos permitan identificar complejos con la misma homología.
+  \frametitle{Motivación más concreta:~morfismos}
+  Un morfismo de complejos de cadenas se llama \textit{casi-isomorfismo} si induce isomorfismos en homología.
+  \pause
+  \begin{itemize}
+    \item Motivación conceptual:~el teorema de Whitehead sugiere que nos gustaría considerar los casi-isomorfismos como verdaderos isomorfismos.
+      \pause
+    \item Motivación práctica:~al final del día nos interesan los invariantes algebraicos del espacio topológico, así que nos conviene en cualquier caso identificar complejos de cadenas casi-isomorfos.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Definición de la categoría derivada}
-  Mediante propiedad universal.
+  \frametitle{Definición mediante propiedad universal}
+  Sea $\mathbf{Ch}(\mathbf{Ab})$ la categoría de los complejos de cadenas de grupos abelianos.
+  \pause
+  La \textit{categoría derivada} de $\mathbf{Ab}$ es una categoría $\mathbf{D}(\mathbf{Ab})$ junto con un functor $Q \colon \mathbf{Ch}(\mathbf{Ab}) \to \mathbf{D}(\mathbf{Ab})$ tal que:
+  \pause
+  \begin{enumerate}
+    \item Si $f \colon A^{\bullet} \to B^{\bullet}$ es un casi-isomorfismo, entonces $Q(f)$ es un isomorfismo.
+      \pause
+    \item Para todo functor $F \colon \mathbf{Ch}(\mathbf{Ab}) \to \mathbf{C}$ con la propiedad anterior existe un único functor $G \colon \mathbf{D}(\mathbf{Ab}) \to \mathbf{C}$ tal que $F = G \circ Q$.
+  \end{enumerate}
+  \begin{center}
+    \begin{tikzcd}[ampersand replacement=\&]
+      \mathbf{Ch}(\mathbf{Ab}) \arrow[swap]{d}{Q} \arrow{r}{F} \& \mathbf{C} \\
+      \mathbf{D}(\mathbf{Ab}) \arrow[dashed, swap, bend right=30]{ur}{\exists ! G} \&
+    \end{tikzcd}
+  \end{center}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Construcción:~primer paso}
-  Identificar morfismos homotópicos.
+  \frametitle{Descripción explícita}
+  \begin{itemize}
+    \item Los objetos de $\mathbf{D}(\mathbf{Ab})$ son complejos de cadenas $A^{\bullet}$.
+      \pause
+    \item Los morfismos $A^{\bullet} \to B^{\bullet}$ en $\mathbf{D}(\mathbf{Ab})$ son clases de equivalencia de diagramas de la forma
+      \begin{center}
+        \begin{tikzcd}[ampersand replacement=\&]
+          \& C^{\bullet} \arrow[swap]{dl}{\text{casi-iso}} \arrow{dr} \& \\
+          A^{\bullet} \& \& B^{\bullet},
+        \end{tikzcd}
+      \end{center}
+      y dos diagramas son equivalentes si están dominados por un tercer diagrama de tal forma que el diagrama resultante conmute módulo homotopía.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Ejemplo:~primer paso no basta}
-  \[ 0 \to \mathbb{Z} \to \mathbb{Z} \to \mathbb{Z}/2\mathbb{Z} \to 0 \]
+  \frametitle{Construcción (dos pasos)}
+  \[ \mathbf{Ch}(\mathbf{Ab}) \xrightarrow{\text{Módulo homotopía}} \mathbf{K}(\mathbf{Ab}) \xrightarrow{\text{Invertir casi-isos}} \mathbf{D}(\mathbf{Ab}) \]
+  \pause
+  \begin{enumerate}
+    \item El primer paso es natural y conveniente:
+      \begin{itemize}
+        \item Las equivalencias de homotopía son ejemplos habituales de casi-isomorfismos.
+        \item Trabajar módulo homotopía nos permite invertir casi-isomorfismos usando cálculo de fracciones.
+      \end{itemize}
+      \pause
+    \item El segundo paso es necesario, no todo casi-isomorfismo es una equivalencia de homotopía.
+      Por ejemplo:
+      \[ \cdots \to 0 \to \mathbb{Z} \xrightarrow{2} \mathbb{Z} \to \mathbb{Z}/2\mathbb{Z} \to 0 \to \cdots \]
+  \end{enumerate}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Observación:~podemos detectar equivalencias débiles con conos}
+  \frametitle{Estructura triangulada}
+  \begin{itemize}
+    \item $\mathbf{D}(\mathbf{Ab})$ sigue teniendo la propiedad de ser aditiva (y $Q$ es aditivo), pero no llega a tener la propiedad de ser abeliana.
+      \pause
+    \item Por tanto no podemos hablar de sequencias exactas en $\mathbf{D}(\mathbf{Ab})$.
+      Pero esta categoría admite una \textit{estructura triangulada}, que nos permite reemplazar las secuencias exactas por triángulos exactos
+      \[ A^{\bullet} \xrightarrow{f} B^{\bullet} \to \operatorname{Cone}(f)^{\bullet} \to A^{\bullet}[1] \]
+      y seguir usando argumentos similares al lema de los $5$ o a la secuencia exacta larga en cohomología.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Observación:~estructura triangulada}
+  \frametitle{Motivación topológica de los triángulos}
+  \begin{enumerate}
+    \item Si $i \colon X \hookrightarrow Y$ es la inclusión de un buen subespacio, entonces la secuencia $X \hookrightarrow Y \to Y/X$ es coexacta.
+      \pause
+    \item Para todo $f \colon X \to Y$ se tiene una secuencia coexacta corta
+      \[ X \to Y \to \operatorname{Cone}(f). \]
+      \pause
+    \item Para $j \colon Y \hookrightarrow \operatorname{Cone}(f)$ se tiene $\operatorname{Cone}(j) \simeq \Sigma X$.
+      \pause
+    \item La suspensión preserva la coexactitud, así que obtenemos una secuencia coexacta larga (secuencia de Puppe):
+      \[ X \xrightarrow{f} Y \xrightarrow{j} C(f) \xrightarrow{g} \Sigma X \xrightarrow{\Sigma f} \Sigma Y \xrightarrow{\Sigma j} \Sigma C(f) \xrightarrow{\Sigma g} \Sigma^{2} X \to \cdots \]
+  \end{enumerate}
+  Véase G.~E.~Bredon, \textit{Topology and Geometry}, \S VII.5.
 \end{frame}
 
 \begin{frame}
-  \frametitle{Construcción:~segundo paso}
-  Cociente de Verdier (localización con cálculo de fracciones).
-\end{frame}
-
-\begin{frame}
-  \frametitle{Ejemplo:~functores derivados}
-  Por qué hace falta derivarlos, compatibilidad con la estructura triangulada.
+  \frametitle{Functores derivados}
+  \begin{itemize}
+    \item Un functor $F \colon \mathbf{Ab} \to \mathbf{A}$ que no sea exacto no puede inducir un functor $F \colon \mathbf{D}(\mathbf{Ab}) \to \mathbf{D}(\mathbf{A})$ de forma directa, no estaría bien definido.
+      \pause
+    \item Si $F \colon \mathbf{Ab} \to \mathbf{A}$ es exacto izquierdo, lo apropiado es considerar su \textit{functor derivado derecho} $\mathbf{R}F \colon \mathbf{D}^{+}(\mathbf{Ab}) \to \mathbf{D}^{+}(\mathbf{A})$, que sí está bien definido y además preserva los triángulos exactos.
+      \pause
+    \item Podemos calcular $\mathbf{R}F(A^{\bullet})$ como $F(I^{\bullet})$, donde $I^{\bullet}$ es un complejo de objetos inyectivos casi-isomorfo a $A^{\bullet}$.
+      \pause
+    \item Si $A$ es un grupo abeliano, podemos recuperar los functores derivados clásicos $R^{i}F(A)$ como
+      \[ R^{i}F(A) = H^{i}(\mathbf{R}F(A)). \]
+  \end{itemize}
 \end{frame}
 
 \section{El Programa del Modelo Minimal}
