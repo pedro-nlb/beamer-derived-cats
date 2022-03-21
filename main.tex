@@ -176,27 +176,37 @@
   \end{itemize}
 \end{frame}
 
-\section{El Programa del Modelo Minimal}
+\section{Geometría birracional}
 
 \begin{frame}
   \frametitle{Objetivo:~clasificar variedades algebraicas}
-  Clasificar módulo isomorfismo es difícil.
-  En vez de ello, intentamos clasificar módulo equivalencia birracional (módulo tener abiertos de Zariski densos isomorfos).
+  \begin{itemize}
+    \item Clasificar módulo isomorfismo es difícil.
+      \pause
+    \item En vez de ello, intentamos clasificar módulo \textit{equivalencia birracional}, es decir, módulo tener abiertos de Zariski densos isomorfos.
+      \pause
+    \item Por ejemplo, la esfera de Riemann y el plano complejo son birracionales.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Curvas:~único representante proyectivo y liso}
-  Clasificación según el género, es decir, según el grado del divisor canónico.
+  \begin{itemize}
+    \item Dada una curva cualquiera, existe un único representante proyectivo y liso en su clase de equivalencia birracional.
+      \pause
+    \item Algebraicamente:~es la curva abstracta formada por los anillos de valuación discreta de su cuerpo de fracciones.
+      \pause
+    \item Geométricamente podemos obtenerla como la normalización de una compacitifación de la curva.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Superficies:~demasiados posibles representantes proyectivos y lisos}
-  Problema:~blow-up produce nuevo representante distinto pero también proyectivo y liso.
-\end{frame}
-
-\begin{frame}
-  \frametitle{Superficies:~criterio de Castelnuovo}
-  Las curvas contractibles se manifiestan como curvas con intersección negativa con el divisor canónico.
+  \frametitle{Superficies:~demasiados posibles representantes}
+  \begin{itemize}
+    \item Problema:~blow-up produce nuevo representante distinto pero también proyectivo y liso.
+      \pause
+    \item Solución:~criterio de Castelnuovo nos permite detectar divisores excepcionales.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -213,21 +223,26 @@
 
 \begin{frame}
   \frametitle{La categoría derivada de una variedad}
-  Fibrados vectoriales no bastan, por eso consideramos haces coherentes.
-\end{frame}
-
-\begin{frame}
-  \frametitle{Propiedades reflejadas en la categoría derivada}
-  \begin{enumerate}
-    \item Conexitud (en concreto, irreducibilidad).
-    \item Dimensión.
-    \item Anillo canónico.
-  \end{enumerate}
+  Sea $X$ una variedad proyectiva lisa.
+  \begin{itemize}
+    \item (Haces de secciones de) fibrados vectoriales sobre $X$ no forman una categoría abeliana, necesitamos considerar la categoría $\mathbf{Coh}(X)$ de haces coherentes sobre $X$.
+      \pause
+    \item $\mathbf{Coh}(X)$ es abeliana, y definimos $\mathbf{D}^{\mathrm{b}}(X) := \mathbf{D}^{\mathrm{b}}(\mathbf{Coh}(X))$.
+      \pause
+    \item Meta-lema:~todo haz coherente $\mathscr{F}$ admite una resolución finita $\mathscr{E}^{\bullet}$ formada por fibrados vectoriales, así que la mayoría de isomorfismos canónicos del álgebra lineal siguen siendo válidos en $\mathbf{D}^{\mathrm{b}}(X)$.
+      \pause
+    \item $\mathbf{D}^{\mathrm{b}}(X)$ detecta conexión, dimensión y anillo canónico.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Descomposiciones semiortogonales}
-  Las ortogonales no son posibles.
+  \begin{itemize}
+    \item $\mathbf{D}^{\mathrm{b}}(X) = \langle \mathbf{A}, \mathbf{B} \rangle$ significa que no hay morfismos no nulos de $\mathbf{B}$ a $\mathbf{A}$ y que la subcategoría triangulada más pequeña de $\mathbf{D}^{\mathrm{b}}(X)$ que contiene a $\mathbf{A}$ y a $\mathbf{B}$ es $\mathbf{D}^{\mathrm{b}}(X)$.
+      \pause
+    \item El primer ejemplo se debe a Be\u{\i}linson:
+      \[ \mathbf{D}^{\mathrm{b}}(\mathbf{P}^{n}) = \langle \mathscr{O}, \mathscr{O}(1), \ldots, \mathscr{O}(n) \rangle. \]
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
