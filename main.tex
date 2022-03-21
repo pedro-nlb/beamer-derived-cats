@@ -113,6 +113,7 @@
           A^{\bullet} \& \& B^{\bullet},
         \end{tikzcd}
       \end{center}
+      \pause
       y dos diagramas son equivalentes si están dominados por un tercer diagrama de tal forma que el diagrama resultante conmute módulo homotopía.
   \end{itemize}
 \end{frame}
@@ -140,6 +141,7 @@
     \item $\mathbf{D}(\mathbf{Ab})$ sigue teniendo la propiedad de ser aditiva (y $Q$ es aditivo), pero no llega a tener la propiedad de ser abeliana.
       \pause
     \item Por tanto no podemos hablar de sequencias exactas en $\mathbf{D}(\mathbf{Ab})$.
+      \pause
       Pero esta categoría admite una \textit{estructura triangulada}, que nos permite reemplazar las secuencias exactas por triángulos exactos
       \[ A^{\bullet} \xrightarrow{f} B^{\bullet} \to \operatorname{Cone}(f)^{\bullet} \to A^{\bullet}[1] \]
       y seguir usando argumentos similares al lema de los $5$ o a la secuencia exacta larga en cohomología.
@@ -156,7 +158,7 @@
       \pause
     \item Para $j \colon Y \hookrightarrow \operatorname{Cone}(f)$ se tiene $\operatorname{Cone}(j) \simeq \Sigma X$.
       \pause
-    \item La suspensión preserva la coexactitud, así que obtenemos una secuencia coexacta larga (secuencia de Puppe):
+    \item Iterando obtenemos la secuencia coexacta de Puppe:
       \[ X \xrightarrow{f} Y \xrightarrow{j} C(f) \xrightarrow{g} \Sigma X \xrightarrow{\Sigma f} \Sigma Y \xrightarrow{\Sigma j} \Sigma C(f) \xrightarrow{\Sigma g} \Sigma^{2} X \to \cdots \]
   \end{enumerate}
   Véase G.~E.~Bredon, \textit{Topology and Geometry}, \S VII.5.
@@ -193,10 +195,6 @@
   \frametitle{Curvas:~único representante proyectivo y liso}
   \begin{itemize}
     \item Dada una curva cualquiera, existe un único representante proyectivo y liso en su clase de equivalencia birracional.
-      \pause
-    \item Algebraicamente:~es la curva abstracta formada por los anillos de valuación discreta de su cuerpo de fracciones.
-      \pause
-    \item Geométricamente podemos obtenerla como la normalización de una compacitifación de la curva.
   \end{itemize}
 \end{frame}
 
@@ -204,18 +202,28 @@
   \frametitle{Superficies:~demasiados posibles representantes}
   \begin{itemize}
     \item Problema:~blow-up produce nuevo representante distinto pero también proyectivo y liso.
-      \pause
-    \item Solución:~criterio de Castelnuovo nos permite detectar divisores excepcionales.
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Superficies:~algoritmo del MMP}
-  Contraer curvas negativas.
-  Posibles resultados:
   \begin{enumerate}
-    \item Contracción divisorial.
-    \item Fibración de Mori.
+    \item Input:~superficie proyectiva lisa $S$ con divisor canónico $K_{S}$.\label{input}
+      \pause
+    \item Hay alguna curva $C \subseteq S$ tal que $K_{S}\cdot C < 0$?
+      \pause
+      \begin{itemize}
+        \item Sí:~podemos contraerla; pasamos al siguiente paso.
+        \item No:~$S$ es un modelo minimal; FIN.
+      \end{itemize}
+      \pause
+    \item Sea $\pi \colon S \to X$ la contracción de $C$.
+      Es $\dim(X) < \dim(S)$?
+      \pause
+      \begin{itemize}
+        \item Sí:~$\pi$ es una fibración de Mori; FIN.
+        \item No:~$X$ es una superficie proyectiva lisa y $\pi$ es un blow-up; repetir paso \ref{input} con $X$.
+      \end{itemize}
   \end{enumerate}
 \end{frame}
 
@@ -240,27 +248,51 @@
   \begin{itemize}
     \item $\mathbf{D}^{\mathrm{b}}(X) = \langle \mathbf{A}, \mathbf{B} \rangle$ significa que no hay morfismos no nulos de $\mathbf{B}$ a $\mathbf{A}$ y que la subcategoría triangulada más pequeña de $\mathbf{D}^{\mathrm{b}}(X)$ que contiene a $\mathbf{A}$ y a $\mathbf{B}$ es $\mathbf{D}^{\mathrm{b}}(X)$.
       \pause
-    \item El primer ejemplo se debe a Be\u{\i}linson:
-      \[ \mathbf{D}^{\mathrm{b}}(\mathbf{P}^{n}) = \langle \mathscr{O}, \mathscr{O}(1), \ldots, \mathscr{O}(n) \rangle. \]
+    \item Idea:~los morfismos del MMP se reflejan en forma de descomposiciones semiortogonales de $\mathbf{D}^{\mathrm{b}}(X)$.
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Descomposición del espacio proyectivo}
+  \frametitle{Ejemplo:~fibración de Mori}
+  La fibración de Mori $\pi \colon \mathbb{P}^{2} \to \{ * \}$ induce una descomposición
+  \[ \mathbf{D}^{\mathrm{b}}(\mathbb{P}^{2}) = \langle \mathscr{O}, \mathscr{O}(1), \mathscr{O}(2) \rangle. \]
+  \pause
+
+  La idea de la semiortogonalidad es
+  \begin{align*}
+    \operatorname{Hom}_{\mathbf{D}^{\mathrm{b}}(\mathbb{P}^{2})}(\mathscr{O}(2),\mathscr{O}[i]) & = \operatorname{Ext}^{i}(\mathscr{O},\mathscr{O}(-2)) \\
+    & = H^{i}(\mathbf{R}\operatorname{Hom}(\mathscr{O},\mathscr{O}(-2))) \\
+    & = H^{i}(\mathbf{R}\Gamma(\mathbb{P}^{2},\mathscr{O}(-2)) \\
+    & = H^{i}(\mathbb{P}^{2},\mathscr{O}(-2)) = 0.
+  \end{align*}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Descomposición inducida por un blow-up}
+  \frametitle{Ejemplo:~blow-up}
+  El blow-up $\pi \colon \tilde{X} \to X$ de una superficie proyectiva lisa $X$ en un punto $p \in X$ induce una descomposición
+  \[ \mathbf{D}^{\mathrm{b}}(\tilde{X}) = \langle \mathscr{O}_{E}(-E), \mathbf{D}^{\mathrm{b}}(X) \rangle. \]
 \end{frame}
 
 \section{Problemas abiertos}
 
 \begin{frame}
   \frametitle{Hipótesis DK}
+  \textbf{Conjetura:}~Sean $X$ e $Y$ dos variedades proyectivas lisas $K$-equivalentes, es decir, existe una variedad proyectiva lisa $Z$ y morfismos birracionales
+  \begin{center}
+    \begin{tikzcd}[ampersand replacement=\&]
+      \& Z \arrow[swap]{dl}{f} \arrow{dr}{g} \& \\
+      X \& \& Y
+    \end{tikzcd}
+  \end{center}
+  tales que $f^{*}K_{X} \sim g^{*}K_{Y}$.
+  \pause
+  Entonces $X$ e $Y$ son $D$-equivalentes, es decir, existe una equivalencia triangulada $\mathbf{D}^{\mathrm{b}}(X) \cong \mathbf{D}^{\mathrm{b}}(Y)$.
 \end{frame}
 
 \begin{frame}
   \frametitle{Descomposiciones en superficies}
+  \textbf{Pregunta:}~Sea $X$ una superficie proyectiva lisa minimal con $H^{0}(X,\mathscr{O}_{X}(K_{X})) \neq 0$.
+  Es $\mathbf{D}^{\mathrm{b}}(X)$ indecomponible?
 \end{frame}
 
 \section{Referencias}
