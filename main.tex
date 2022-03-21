@@ -45,15 +45,21 @@
 \section{Categorías derivadas}
 
 \begin{frame}
-  \frametitle{Motivación histórica (demasiado simplificada)}
+  \frametitle{Motivación histórica}
   \begin{enumerate}
-    \item Topología algebraica:~asociar invariantes algebraicos a espacios topológicos, por ejemplo la homología.
+    \item Topología algebraica.
+      \vspace{5mm}
       \pause
-    \item Álgebra homológica:~sistematizar y generalizar métodos y herramientas disponibles en la categoría de grupos abelianos, permitiéndonos definir invariantes con valores en otras categorías (en categorías abelianas).
+
+    \item Álgebra homológica.
+      \vspace{5mm}
       \pause
-    \item Las categorías derivadas surgen como herramienta técnica necesaria para generalizar la dualidad de Poincaré al contexto relativo (dualidad de Verdier).
+
+   \item Categorías derivadas como herramienta. 
+      \vspace{5mm}
       \pause
-    \item Con el tiempo las categorías derivadas adquieren interés propio, gracias por ejemplo a la simetría especular homológica o a conexiones con la geometría birracional.
+
+    \item Simetría especular homológica, hipótesis DK...
   \end{enumerate}
 \end{frame}
 
@@ -91,7 +97,7 @@
   \begin{enumerate}
     \item Si $f \colon A^{\bullet} \to B^{\bullet}$ es un casi-isomorfismo, entonces $Q(f)$ es un isomorfismo.
       \pause
-    \item Para todo functor $F \colon \mathbf{Ch}(\mathbf{Ab}) \to \mathbf{C}$ con la propiedad anterior existe un único functor $G \colon \mathbf{D}(\mathbf{Ab}) \to \mathbf{C}$ tal que $F \cong G \circ Q$.
+    \item Para todo functor $F \colon \mathbf{Ch}(\mathbf{Ab}) \to \mathbf{C}$ con la propiedad anterior existe un functor $G \colon \mathbf{D}(\mathbf{Ab}) \to \mathbf{C}$ único salvo isomorfismo tal que $F \cong G \circ Q$.
   \end{enumerate}
   \begin{center}
     \begin{tikzcd}[ampersand replacement=\&]
@@ -140,11 +146,11 @@
   \begin{itemize}
     \item $\mathbf{D}(\mathbf{Ab})$ sigue teniendo la propiedad de ser aditiva (y $Q$ es aditivo), pero no llega a tener la propiedad de ser abeliana.
       \pause
+
     \item Por tanto no podemos hablar de sequencias exactas en $\mathbf{D}(\mathbf{Ab})$.
       \pause
       Pero esta categoría admite una \textit{estructura triangulada}, que nos permite reemplazar las secuencias exactas por triángulos exactos
-      \[ A^{\bullet} \xrightarrow{f} B^{\bullet} \to \operatorname{Cone}(f)^{\bullet} \to A^{\bullet}[1] \]
-      y seguir usando argumentos similares al lema de los $5$ o a la secuencia exacta larga en cohomología.
+      \[ A^{\bullet} \xrightarrow{f} B^{\bullet} \to \operatorname{Cone}(f)^{\bullet} \to A^{\bullet}[1]. \]
   \end{itemize}
 \end{frame}
 
