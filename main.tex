@@ -132,6 +132,7 @@
     \item El primer paso es natural y conveniente:
       \begin{itemize}
         \item Las equivalencias de homotopía son ejemplos habituales de casi-isomorfismos.
+          \pause
         \item Trabajar módulo homotopía nos permite invertir casi-isomorfismos usando cálculo de fracciones.
       \end{itemize}
       \pause
@@ -159,8 +160,7 @@
   \begin{enumerate}
     \item Si $i \colon X \hookrightarrow Y$ es la inclusión de un buen subespacio, entonces la secuencia $X \hookrightarrow Y \to Y/X$ es coexacta.
       \pause
-    \item Para todo $f \colon X \to Y$ se tiene una secuencia coexacta corta
-      \[ X \to Y \to \operatorname{Cone}(f). \]
+    \item $X \xrightarrow{f} Y \to \operatorname{Cone}(f)$ es coexacta para todo $f \colon X \to Y$.
       \pause
     \item Para $j \colon Y \hookrightarrow \operatorname{Cone}(f)$ se tiene $\operatorname{Cone}(j) \simeq \Sigma X$.
       \pause
@@ -175,7 +175,7 @@
   \begin{itemize}
     \item Un functor $F \colon \mathbf{Ab} \to \mathbf{A}$ que no sea exacto no puede inducir un functor $F \colon \mathbf{D}(\mathbf{Ab}) \to \mathbf{D}(\mathbf{A})$ de forma directa, no estaría bien definido.
       \pause
-    \item Si $F \colon \mathbf{Ab} \to \mathbf{A}$ es exacto izquierdo, lo apropiado es considerar su \textit{functor derivado derecho} $\mathbf{R}F \colon \mathbf{D}^{+}(\mathbf{Ab}) \to \mathbf{D}^{+}(\mathbf{A})$, que sí está bien definido y además preserva los triángulos exactos.
+    \item Si $F \colon \mathbf{Ab} \to \mathbf{A}$ es exacto izquierdo, consideramos su \textit{functor derivado derecho} $\mathbf{R}F \colon \mathbf{D}^{+}(\mathbf{Ab}) \to \mathbf{D}^{+}(\mathbf{A})$.
       \pause
     \item Podemos calcular $\mathbf{R}F(A^{\bullet})$ como $F(I^{\bullet})$, donde $I^{\bullet}$ es un complejo de objetos inyectivos casi-isomorfo a $A^{\bullet}$.
       \pause
@@ -191,7 +191,7 @@
   \begin{itemize}
     \item Clasificar módulo isomorfismo es difícil.
       \pause
-    \item En vez de ello, intentamos clasificar módulo \textit{equivalencia birracional}, es decir, módulo tener abiertos de Zariski densos isomorfos.
+    \item Intentamos clasificar módulo \textit{equivalencia birracional} (módulo tener abiertos de Zariski densos isomorfos).
       \pause
     \item Por ejemplo, la esfera de Riemann y el plano complejo son birracionales.
   \end{itemize}
