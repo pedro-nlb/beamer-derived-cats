@@ -1,3 +1,3 @@
-# derived cats
+# Categorías derivadas y geometría birracional
 
-Document created from the beamer template [here](https://github.com/pedro-nlb/latex-templates).
+Diapositivas para una charla en la Red de Doctorandos en Matemáticas de la UCM (Madrid, SS 22).
